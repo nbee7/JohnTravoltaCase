@@ -1,7 +1,5 @@
 package com.main;
 
-import com.main.JohnTravolta;
-
 import java.util.Scanner;
 
 public class Main {
