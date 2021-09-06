@@ -36,23 +36,33 @@ public class JohnTravoltaTest {
     }
 
     @Test
-    @DisplayName("Test skenario sukses untuk bisa menabung")
+    @DisplayName("Test Skenario sukser untuk user.hitungGaji(int) sama dengan 40")
     public void TestCase3Success() {
-        String result = johnTravolta.hitungPengeluaran(300000, 20000);
-        assertEquals("Bisa Menabung Sebesar: 280000", result);
+        double result = johnTravolta.hitungGaji(30);
+        assertEquals(450000, result);
+    }
+
+    @Test
+    @DisplayName("Test skenario sukses untuk bisa menabung")
+    public void TestCase4Success() {
+        int gaji = johnTravolta.hitungGaji(52);
+        String result = johnTravolta.hitungPengeluaran(gaji, 600000);
+        assertEquals("Bisa Menabung Sebesar: 270000", result);
     }
 
     @Test
     @DisplayName("Test skenario sukses untuk tidak bisa menabung")
-    public void TestCase4Success() {
-        String result = johnTravolta.hitungPengeluaran(300000, 300000);
+    public void TestCase5Success() {
+        int gaji = johnTravolta.hitungGaji(20);
+        String result = johnTravolta.hitungPengeluaran(gaji, 300000);
         assertEquals("Tidak Bisa Menabung", result);
     }
 
     @Test
     @DisplayName("Test skenario sukses untuk cari tambahan")
-    public void TestCase5success() {
-        String result = johnTravolta.hitungPengeluaran(300000, 320000);
+    public void TestCase6success() {
+        int gaji = johnTravolta.hitungGaji(20);
+        String result = johnTravolta.hitungPengeluaran(gaji, 320000);
         assertEquals("Cari Tambahan", result);
     }
 }
